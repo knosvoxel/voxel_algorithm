@@ -6,3 +6,5 @@
 - VS Code extensions: C/C++, CMake Tools
 - CMake version 3.15 or greater
 - GCC
+
+# Based on cgyurgyik/fast-voxel-traversal-algorithm

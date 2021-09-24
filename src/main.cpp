@@ -14,6 +14,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include <voxel_algorithm.h>
+
 // forward declarations
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -21,6 +23,11 @@ void processInput(GLFWwindow* window);
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
+
+// needs to be normalized
+glm::dvec3 direction{1.0, 0.0, 0.0};
+glm::dvec3 origin{4.0, 4.0, 0.0};
+Ray testRay{origin, direction};
 
 int main()
 {
@@ -60,6 +67,15 @@ int main()
    // build and compile our shader program
    // ---------------------------------------
    Shader ourShader("../shaders/learnopengl/3.3.shader.vs", "../shaders/learnopengl/3.3.shader.fs");
+
+/*
+   std::cout << testRay.returnOrigin().x << std::endl;
+   std::cout << testRay.returnOrigin().y << std::endl;
+   std::cout << testRay.returnOrigin().z << std::endl;
+   std::cout << testRay.returnDirection().x << std::endl;
+   std::cout << testRay.returnDirection().y << std::endl;
+   std::cout << testRay.returnDirection().z << std::endl;
+   */
    
    // render loop
    //----------------------------------------

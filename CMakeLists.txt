@@ -7,10 +7,9 @@ set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set(LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib")
 set(INCL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include")
 set(RES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/res")
-set(SOURCES "${SRC_DIR}/main.cpp")
 
 # Executable definition and properties
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} src/main.cpp src/voxel_algorithm.cpp)
 target_include_directories(${PROJECT_NAME} PRIVATE "${SRC_DIR}")
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
 
